@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<title>SEF, где записи?</title>
+<head>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      background-color: #fcfbfb;
+    }
+
+    #image {
+      width: 400px;
+      height: auto;
+    }
+
+    #text {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    #timer-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    #timer-bar {
+      width: 100%;
+      height: 2px;
+      background-color: #ccc;
+    }
+
+    #timer {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    #counter {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 22px;
+      margin-top: 10px;
+    }
+
+    #credit {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      color: #888;
+      margin-top: 60px; /* Измененный отступ сверху */
+    }
+    a:visited {
+      color: inherit;
+    }
+    a:active {
+      outline: none;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <img id="image" src="happy-man.png" alt="Happy Man">
+  <div id="text">
+    <p>Спустя 1000+ попыток дозвониться в SEF:<br>- Записи нет.<br>- А когда будут?<br>- Не знаем, проверяйте на фейсбуке!</p>
+  </div>
+  <div id="timer-container">
+    <div id="timer-bar"></div>
+    <div id="counter">Записи нет уже:</div>
+    <div id="timer"></div>
+  </div>
+
+  <div id="credit">
+    <p>Весь html, css, js код написан с использованием ChatGPT.<br>Изображение сгенерировано через Dall-E.</p>
+    <p>With love ❤️ <a href="https://rudnkh.me">V. R.</a></p>
+    <hr style="height:1px;border:none;color:#333;background-color:#333;" />
+    <p style="color:#cacaca;">This website is intended solely for fun and is not affiliated with any government entity. Any coincidences or similarities are purely coincidental.</p>
+  </div>
+
+  <script>
+    // Определяем дату, от которой нужно считать время
+    var countdownDate = new Date("Oct 18, 2022 12:07:00").getTime();
+
+    // Обновляем счетчик времени каждую секунду
+    var timer = setInterval(function() {
+      var now = new Date().getTime();
+
+      // Разница между текущим временем и целевой датой
+      var distance = now - countdownDate;
+
+      // Рассчитываем дни, часы, минуты и секунды
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Отображаем счетчик времени на странице
+      document.getElementById("timer").innerHTML = days + " дней " + hours + " часов " + minutes + " минут " + seconds + " секунд";
+
+    }, 1000);
+  </script>
+</body>
+</html>
