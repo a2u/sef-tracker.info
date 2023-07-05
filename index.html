@@ -72,37 +72,13 @@
 <body>
   <img id="image" src="happy-man.png" alt="Happy Man">
   <div id="text">
-    <p>After 1000+ attempts to calling SEF:<br>— No appointments.<br>— When will appointments open?<br>— We don't know, stay tuned on our Facebook page.</p>
+    <p><b>30 May 2023:</b> Appointments appeared on everything articles, except family reunion.</p>
   </div>
-  <div id="timer-container">
-    <div id="timer-bar"></div>
-    <div id="counter">No appointments:</div>
-    <div id="timer"></div>
-  </div>
-
   <div id="credit">
     <p>The site was created using ChatGPT, Dall-E and Github Pages.</p>
     <hr style="height:1px;border:none;color:#333;background-color:#333;" />
     <p style="color:#cacaca;">The countdown starts from the date of the last announcement of the opening of appointments for general articles.</p>
     <p style="color:#cacaca;">This website is intended solely for fun and is not affiliated with any government entity.</p>
   </div>
-
-  <script>
-    var countdownDate = new Date("Oct 18, 2022 12:07:00").getTime();
-
-    var timer = setInterval(function() {
-      var now = new Date().getTime();
-
-      var distance = now - countdownDate;
-
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("timer").innerHTML = days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds";
-
-    }, 1000);
-  </script>
 </body>
 </html>
